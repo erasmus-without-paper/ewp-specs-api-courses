@@ -42,10 +42,13 @@ of it. The server is REQUIRED to process all of them.
 Permissions
 -----------
 
-All requests from the EWP Network MUST be allowed access to this API.
-Additionally, servers MAY allow this API to be accessed by external clients
-(without proper client certificate). Consult the [Echo API][echo] specs for
-details on handling unprivileged requests.
+ * All requests from the EWP Network MUST be allowed access to this API.
+
+ * Additionally, it is RECOMMENDED to allow this API to be accessed by
+   **anonymous** external clients too (without the need of using a client
+   certificate). It is also RECOMMENDED that servers should include an
+   `Access-Control-Allow-Origin: *` header in their responses (so that
+   JavaScript applications will be able to use it without a proxy).
 
 
 Handling of invalid parameters
