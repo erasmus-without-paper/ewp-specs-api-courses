@@ -1,60 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
-    xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
-    elementFormDefault="qualified"
-
-    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/master"
-    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/master"
->
+<xs:schema elementFormDefault="qualified" targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/master" xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/master" xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <!-- WRTODO: Replace all occurrences of 'master' (in all projects) with 'stable-v1' upon release. -->
-
-    <xs:import
-        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
-        namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
-    />
-
+    <xs:import namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd" schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"/>
     <xs:annotation>
-        <xs:documentation>
-            This schema is a part of the Erasmus Without Paper project. Before you start
+        <xs:documentation>This schema is a part of the Erasmus Without Paper project. Before you start
             using it, make sure you have read the general rules described here:
 
-            http://developers.erasmuswithoutpaper.eu/
-        </xs:documentation>
+            http://developers.erasmuswithoutpaper.eu/</xs:documentation>
     </xs:annotation>
-
     <xs:element name="response">
         <xs:annotation>
-            <xs:documentation>
-                This describes the format of the response returned by the EWP Courses API.
-            </xs:documentation>
+            <xs:documentation>This describes the format of the response returned by the EWP Courses API.</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="course" minOccurs="0" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Response consists of a list of matching Course objects. Clients should use the
-                            `id` attribute to match objects with their `course_id` request parameters.
-                        </xs:documentation>
-                    </xs:annotation>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="learning-opportunity-specification">
                     <xs:complexType>
                         <xs:sequence>
-                            <!-- ... -->
+                            <xs:element name="title">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute ref="xml:lang"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="credits">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:byte">
+                                            <xs:attribute name="scheme" type="xs:string" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="eqf-level" type="xs:byte"/>
+                            <xs:element name="subject-area" type="xs:float"/>
+                            <xs:element name="description">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute ref="xml:lang"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
-                        <xs:attribute name="id" use="required" type="xs:string">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    ID of the course. It must match one of the `course_id` values provided in the
-                                    request.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:attribute>
+                        <xs:attribute name="id" type="xs:string" use="optional"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 </xs:schema>
