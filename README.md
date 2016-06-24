@@ -39,6 +39,29 @@ This parameter is *repeatable*, so the request MAY contain multiple occurrences
 of it. The server is REQUIRED to process all of them.
 
 
+### `snapshot_at_date` (optional)
+
+A date, in the `YYYY-mm-dd` format. If given, the server MAY attempt to
+generate a course description *as it would have looked like at this date*.
+
+When we were designing this API, it was brought to our attention that, in many
+computer systems, some attributes of courses may change in time. Some of these
+changes are important (e.g. the number of ECTS credits awarded), while other
+describe just unimportant details (e.g. bibliography used). This parameter is
+a simple way of allowing the client the access to this history (other, more
+comprehensive ways, might be designed in the future).
+
+*A note for client developers:* You should be aware, that we do not require the
+server developers to support this parameter. Many computer systems may return
+only the "freshest" version of the Course description, regardless of the date
+passed.
+
+*A note for server developers:* While it is not required to support this
+parameter, it is REQUIRED to clearly state *if* you support it (or support it
+only partially), in your manifest entry. See [manifest-entry.xsd]
+(manifest-entry.xsd) for details.
+
+
 Permissions
 -----------
 

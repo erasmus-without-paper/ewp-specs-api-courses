@@ -44,6 +44,48 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="snapshot-support">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    This element tells the client implementers whether the `snapshot_at_date`
+                                    parameter is being supported by the server.
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="full">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                This value means that the server's parent SIS (student information system)
+                                                keeps track of the changes to the courses, AND that the implemented Courses API
+                                                differentiates the *important* elements in the returned results based on these
+                                                history of changes and the `snapshot_at_date` parameter.
+
+                                                Which attributes are considered "important"? This term is not clearly defined,
+                                                but you may assume that these are the ones which MAY influence the recognition
+                                                process of the students which have passed the course.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:enumeration>
+                                    <xs:enumeration value="partial">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                This value means that *only some* of the important course attributes are being
+                                                tracked and exposed via the use of the `snapshot_at_date` parameter.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:enumeration>
+                                    <xs:enumeration value="none">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                This value means that none of the important course attributes are being tracked
+                                                and exposed via the use of the `snapshot_at_date` parameter.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:enumeration>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
