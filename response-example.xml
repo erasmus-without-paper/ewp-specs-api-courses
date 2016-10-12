@@ -24,13 +24,6 @@
             -->
             <los-code>MA100</los-code>
         </id>
-        <!--
-        Wojtek's comment: Perhaps <name> would be better?
-        https://www.google.com/trends/explore?q=course%20title,course%20name
-        -->
-        <!--
-        Kais comment: Sure, "name" is fine.
-        -->
         <name lang="no">Grunnkurs i matematikk</name>
         <name lang="en">Introductory calculus</name>
         <credits scheme="ects">15</credits>
@@ -42,16 +35,6 @@
         <subject-area-code>11.1</subject-area-code>
         <description lang="no">En eller annen beskrivelse</description>
         <description lang="en">Some description</description>
-        <!--
-        Wojtek's comment: I think we need academic terms here. One of the primary
-        use cases for this API would be to allow the student to check how likely
-        the course is to be conducted in the academic terms he is interested in.
-        -->
-        <!--
-        Kais comment: Ah, yes of course. In the model, this is represented by 0..*
-        Learning Opportunity Instances. This is identified by LOS + Start Term +
-        End Term and contains an optional instruction language:
-        -->
         <learning-opportunity-instances>
             <!-- Kais comment: Staggered term intervals, only one of them in English -->
             <learning-opportunity-instance>
@@ -59,6 +42,9 @@
                     <academic-term type="start">
                         <year>2016</year>
                         <term xml:lang="en-us">Fall</term>
+                        <!--
+                        Wojtek's comment: See comments in IIAs API.
+                        -->
                     </academic-term>
                     <academic-term type="end">
                         <year>2017</year>
