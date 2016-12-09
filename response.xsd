@@ -2,6 +2,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/master"
     elementFormDefault="qualified"
 
     targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/master"
@@ -13,6 +14,11 @@
         schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
         namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     />
+
+    <xs:import
+        schemaLocation="../ewp-specs-types-academic-term/schema.xsd"
+        namespace="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/master"
+    /> <!-- WRTODO: absolute paths! -->
 
     <xs:import
         schemaLocation="http://www.w3.org/2001/03/xml.xsd"
@@ -189,7 +195,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="specifies">
+                            <xs:element name="specifies" minOccurs="0" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         A wrapper for the list of LOI elements.
@@ -218,7 +224,7 @@
                                                             </xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
-                                                    <xs:element name="start" type="xs:date" minOccurs="0" maxOccurs="1">
+                                                    <xs:element name="start" type="xs:date" minOccurs="1" maxOccurs="1">
                                                         <xs:annotation>
                                                             <xs:documentation>
                                                                 The starting date of this LOI. (Usually this will match the beginning of one of
@@ -226,7 +232,7 @@
                                                             </xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
-                                                    <xs:element name="end" type="xs:date" minOccurs="0" maxOccurs="1">
+                                                    <xs:element name="end" type="xs:date" minOccurs="1" maxOccurs="1">
                                                         <xs:annotation>
                                                             <xs:documentation>
                                                                 The ending date of this LOI. (Usually this will match the end of one of the
@@ -234,7 +240,7 @@
                                                             </xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
-                                                    <xs:element ref="term:academic-term" minOccurs="0" maxOccurs="1">
+                                                    <xs:element ref="trm:academic-term" minOccurs="0" maxOccurs="1">
                                                         <xs:annotation>
                                                             <xs:documentation>
                                                                 Describes the academic term in which the LOI took place.
@@ -304,7 +310,7 @@
                                                         </xs:annotation>
                                                         <xs:complexType>
                                                             <xs:sequence>
-                                                                <xs:element name="scheme" type="xs:string">
+                                                                <xs:element name="scheme" type="xs:string" minOccurs="1" maxOccurs="1">
                                                                     <xs:annotation>
                                                                         <xs:documentation>
                                                                             Currently there is only one predefined scheme you can have here:
@@ -317,7 +323,7 @@
                                                                         </xs:documentation>
                                                                     </xs:annotation>
                                                                 </xs:element>
-                                                                <xs:element name="level" minOccurs="0">
+                                                                <xs:element name="level" minOccurs="0" maxOccurs="1">
                                                                     <xs:simpleType>
                                                                         <xs:restriction base="xs:string">
                                                                             <xs:enumeration value="Bachelor"/>
@@ -326,7 +332,7 @@
                                                                         </xs:restriction>
                                                                     </xs:simpleType>
                                                                 </xs:element>
-                                                                <xs:element name="value" type="xs:decimal" minOccurs="0">
+                                                                <xs:element name="value" type="xs:decimal" minOccurs="1" maxOccurs="1">
                                                                     <xs:annotation>
                                                                         <xs:documentation>
                                                                             The number of credits being awarded.
@@ -336,7 +342,6 @@
                                                             </xs:sequence>
                                                         </xs:complexType>
                                                     </xs:element>
-                                                    -->
                                                     <xs:element name="languageOfInstruction" type="xs:language" minOccurs="0">
                                                         <xs:annotation>
                                                             <xs:documentation>
