@@ -159,6 +159,9 @@
                                 <xs:annotation>
                                     <xs:documentation>
                                         The Erasmus subject area code of the course.
+
+                                        It is named "subjectArea" for consistency with older ELMO-based formats.
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/6
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
