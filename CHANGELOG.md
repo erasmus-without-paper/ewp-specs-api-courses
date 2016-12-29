@@ -5,6 +5,12 @@ This document describes all the changes made to the *Courses API* document,
 starting from its first beta draft version.
 
 
+0.2.1
+-----
+
+* Add `<gradingScheme>` to `response-example.xml` too.
+
+
 0.2.0
 -----
 

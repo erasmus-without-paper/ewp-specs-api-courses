@@ -63,8 +63,8 @@ various computer systems:
 
  * Some partners keep all learning opportunities in a single database table,
    with the same primary key. In such databases, **it is not possible**, for
-   example, for a `Course` and a `Degree Programme`, to have the same primary
-   key.
+   example, for a `Course` and a `Degree Programme`, to have the same value of
+   primary key.
 
  * Other partners keep them in separate tables (e.g. three tables: for
    programmes, courses and classes). In such databases, **is it possible** that
