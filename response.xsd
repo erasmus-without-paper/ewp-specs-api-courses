@@ -61,8 +61,16 @@
                                         passed in the Courses API call. It SHOULD NOT be displayed to the user (use
                                         `los-code` for that).
 
-                                        Server implementers! Please read this introduction:
+                                        Read an introduction on LOS and LOI IDs here:
                                         https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
+
+                                        Server implementers SHOULD use immutable surrogate keys for their work with EWP
+                                        (we recommend choosing UUID surrogate keys). Avoid using natural/business keys!
+
+                                        Related links:
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9
+                                        https://en.wikipedia.org/wiki/Surrogate_key
+                                        https://en.wikipedia.org/wiki/Natural_key
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
