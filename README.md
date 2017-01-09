@@ -56,8 +56,6 @@ has not been conducted in the searched timespan.
 
 ### LO identifiers: `los_id` and `loi_id`
 
-**Please read it carefully. Hasty decisions might cost you in the future!**
-
 There are major differences in a way learning opportunities are modeled in
 various computer systems:
 
@@ -71,48 +69,26 @@ various computer systems:
    there exists a `Course`, and a `Degree Programme` with exactly the same
    primary key.
 
-In EWP, we have decided to adopt the former strategy (as EMREX had). **This
-means that partners using the latter strategy (multiple tables) might need to
-perform some additional actions in order to avoid ID conflicts:**
+In EWP, we have considered many ways of dealing with this issue, and eventually
+we have [decided]
+(https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9) to
+adopt the somewhat "mixed" strategy - we use a single set of IDs for all LOS
+types, but **the type of each LOS MUST be included in its ID, in a clearly
+specified way** (see XSD for details). Same is true for `loi_id` values (which
+are unique identifiers of specific LOIs).
 
- * One way of dealing with the problem would be to force unique IDs across
-   multiple tables. This way, whenever you receive an ID, you will be able to
-   find out which entity it refers to (by searching multiple tables). This
-   approach however is often bad for performance reasons (and most databases
-   don't support it natively). Also, you might be required to update your
-   existing primary keys, which is bad in itself.
+There are a couple of consequences of this strategy:
 
- * Another way would be to use UUIDs as `los_id`. You won't need to update your
-   primary keys, but you will need to keep another set of unique keys, which
-   is also not so good for performance.
+ * Each exposed LOS MUST have type.
 
- * Fastest approach (albeit a bit more complex) is to use "dynamic IDs". You
-   do not change your database in any way, but you are required to publish
-   unique, dynamically generated IDs in your EWP responses. Clients will treat
-   such "dynamic IDs" as regular IDs. Later, whenever a client asks about the
-   details of such ID, you must be able to dynamically map it back into a real
-   row in a real table.
+ * LOSes MUST NOT change their type, ever. If, for some reason, HEI wants to
+   change a type of the LOS entity, it MUST expose is under a different ID.
 
-   **Example:** if you have separate tables for degree programmes and for
-   courses, and you have a course with a primary key value of `123`, then,
-   whenever you refer to this course in EWP APIs, you might use `C123`
-   (instead of just `123`). Later, if one of the clients asks you about `P123`,
-   you will know that he is after a `Degree Programme`, not a `Course`, and you
-   will know which of your tables to query for `123`.
-
-   Note, that letters `C` and `P` are just examples. From the client's point of
-   view, they are part of the ID, and they have no special meaning. It is up to
-   you to decide on this meaning. **Once you decide on one schema, you will
-   need to use it consistently across all EWP APIs.**
-
-Same is true for `loi_id` values (which are unique identifiers of specific
-LOIs).
-
-Note, that you SHOULD make this decision now, even if you only expose a single
-type of learning opportunity via this API. If you don't, then you will have
-problems expanding to other types in the future.
-
-Also, IDs of your LOSes and LOIs generally **shouldn't change**.
+ * For safety, it is HIGHLY RECOMMENDED that all implementers use [surrogate
+   IDs](https://en.wikipedia.org/wiki/Surrogate_key) in their LOS ID suffixes.
+   Our recommendation is to use UUIDs, but other surrogate keys are also
+   acceptable. This recommendation is also true for all other IDs exposed via
+   EWP.
 
 
 Request method
