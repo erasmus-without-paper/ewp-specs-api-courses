@@ -82,7 +82,7 @@ There are a couple of consequences of this strategy:
  * Each exposed LOS MUST have type.
 
  * LOSes MUST NOT change their type, ever. If, for some reason, HEI wants to
-   change a type of the LOS entity, it MUST expose is under a different ID.
+   change a type of the LOS entity, it MUST expose it under a different ID.
 
  * For safety, it is HIGHLY RECOMMENDED that all implementers use [surrogate
    IDs](https://en.wikipedia.org/wiki/Surrogate_key) in their LOS ID suffixes.
