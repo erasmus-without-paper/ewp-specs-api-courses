@@ -141,7 +141,7 @@ includes all LOIs.
 
 ### `lois_after` (optional)
 
-A date in the `YYYY-mm-dd` format. It given, then the client states that it is
+A date in the `YYYY-mm-dd` format. If given, then the client states that it is
 interested only in the LOIs conducted after this date. If given, server SHOULD
 include only such `<learningOpportunityInstance>` elements for which their
 `<start>` date is after this given date.
