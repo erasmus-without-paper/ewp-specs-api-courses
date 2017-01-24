@@ -201,6 +201,20 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
+                            <xs:element name="eqfLevelProvided" type="ewp:EqfLevel" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        If this element exists, then the hosting HEI says that completing this LOS
+                                        provides the students with knowledge, skills and competence (in particular
+                                        subject area) on the level described by the given EQF code.
+
+                                        Note, that in some partner systems this value is kept only for some types of
+                                        LOSes (for example, only for "Degree Programme" LOS types).
+
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/8
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                             <xs:element name="url" type="ewp:HTTP" minOccurs="0" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
