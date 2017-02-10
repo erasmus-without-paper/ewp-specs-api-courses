@@ -46,7 +46,7 @@
                     <xs:annotation>
                         <xs:documentation>
                             This represents a single result. Servers will produce one such element for
-                            each of the `los_id` values passed in the Courses API call.
+                            each of the `los_id` or `los_code` values passed in the Courses API call.
 
                             This element describes a single Learning Opportunity entity, along with some
                             possible references to its "child nodes".
@@ -57,8 +57,7 @@
                             <xs:element name="los-id" minOccurs="1" maxOccurs="1" type="LosID">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Unique identifier of this LOS. Will always match one of the `los_id` values
-                                        passed in the Courses API call. It SHOULD NOT be displayed to the user (use
+                                        Unique identifier of this LOS. It SHOULD NOT be displayed to the user (use
                                         `los-code` for that).
 
                                         Read an introduction on LOS and LOI IDs here:

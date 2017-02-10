@@ -115,17 +115,19 @@ are conducted. This parameter MUST be required by the server even if the server
 covers only a single institution.
 
 
-### `los_id` (repeatable, required)
+### `los_id` or `los_code` (repeatable, required)
 
-A list of LOS identifiers (no more than `<max-los-ids>` items) - IDs of LOSes
-the client wants to retrieve information on.
+A list of ID or codes of LOSes to return (no more than `<max-los-ids>` or
+`<max-los-codes>` items, respectively). The requester MUST provide either a
+list of `los_id` values, or a list of `los_code` values, **but not both**.
 
 This parameter is *repeatable*, so the request MAY contain multiple occurrences
 of it. The server is REQUIRED to process all of them.
 
-Server implementers provide their own chosen value of `<max-los-ids>` via
-their manifest entry (see [manifest-entry.xsd](manifest-entry.xsd)). Clients
-SHOULD parse this value (or assume it's equal to `1`).
+Server implementers provide their own chosen values of `<max-los-ids>` and
+`<max-los-codes>` via their manifest entry (see [manifest-entry.xsd]
+(manifest-entry.xsd)). Clients SHOULD parse these values (or assume they're
+equal to `1`).
 
 
 ### `lois_before` (optional)
@@ -191,14 +193,17 @@ Handling of invalid parameters
  * Invalid (or unknown) `hei_id` values MUST result in a HTTP 400 error
    response.
 
- * Invalid (unknown) `los_id` values MUST be **ignored**. Servers MUST
-   return a valid (HTTP 200) XML response in such cases, but the response will
-   simply not contain the information on the unknown `los_id` values. If
-   all values are unknown, servers MUST respond with an empty `<response>`
-   element. This requirement is true even when `<max-los-ids>` is `1`.
+ * Invalid (or unknown) `los_id` and `los_code` values MUST be **ignored**.
+   Servers MUST return a valid (HTTP 200) XML response in such cases, but the
+   response will simply not contain any information on these missing entities.
+   If all values are unknown, servers MUST respond with an empty `<response>`
+   element. This requirement is true even when both `<max-los-ids>` and
+   `<max-los-codes> are set to `1`.
 
- * If the length of `los_id` list is greater than `<max-los-ids>`,
-   servers MUST respond with HTTP 400.
+ * If the length of `los_id` list is greater than `<max-los-ids>` (or the
+   length of `los_code` list is greater than `<max-los-codes>`), then the
+   server MUST respond with HTTP 400. Clients SHOULD split such large requests
+   into a couple of smaller ones.
 
 
 Response
