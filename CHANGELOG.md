@@ -5,6 +5,20 @@ This document describes all the changes made to the *Courses API* document,
 starting from its first beta draft version.
 
 
+0.4.0
+-----
+
+* New `los_code` parameter was added to allow requesters searching for LOSes
+  by their codes (the server is now REQUIRED to support this parameter).
+  Providing `los_id` parameter is no longer required, if the requester provides
+  the `los_code` parameter instead. This is a part of a larger change in all
+  APIs described [here]
+  (https://github.com/erasmus-without-paper/general-issues/issues/21).
+
+* New optional element: `<eqfLevelProvided>`. See [this issue]
+  (https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/8).
+
+
 0.3.0
 -----
 
