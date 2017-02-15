@@ -83,6 +83,19 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
+                            <xs:element name="ounit-id" minOccurs="0" maxOccurs="1" type="ewp:AsciiPrintableIdentifier">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The ID of the Organizational Unit associated with this LOS.
+
+                                        For example, in case of courses, this should an "organizing faculty" of this
+                                        course. In case of other LOS types, you may look for the information on the
+                                        exact meaning in this thread:
+
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/11
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                             <xs:element name="title" type="ewp:StringWithOptionalLang" minOccurs="1" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
