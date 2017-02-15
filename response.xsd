@@ -63,13 +63,9 @@
                                         Read an introduction on LOS and LOI IDs here:
                                         https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
 
-                                        Server implementers SHOULD use immutable surrogate keys for their work with EWP
-                                        (we recommend choosing UUID surrogate keys). Avoid using natural/business keys!
-
-                                        Related links:
-                                        https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9
-                                        https://en.wikipedia.org/wiki/Surrogate_key
-                                        https://en.wikipedia.org/wiki/Natural_key
+                                        Server implementers MUST use immutable surrogate keys for their work with EWP
+                                        (we recommend choosing UUID surrogate keys). You can read about this here:
+                                        https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -83,9 +79,7 @@
                                         network.
 
                                         Related links:
-                                        https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9
-                                        https://en.wikipedia.org/wiki/Surrogate_key
-                                        https://en.wikipedia.org/wiki/Natural_key
+                                        https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -498,7 +492,7 @@
                 https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
             </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="xs:string">
+        <xs:restriction base="ewp:AsciiPrintableIdentifier">
             <xs:pattern value="(CR|CLS|MOD|DEP)/(.{1,40})">
                 <xs:annotation>
                     <xs:documentation>
@@ -529,7 +523,7 @@
                 https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
             </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="xs:string">
+        <xs:restriction base="ewp:AsciiPrintableIdentifier">
             <xs:pattern value="(CRI|CLSI|MODI|DEPI)/(.{1,40})">
                 <xs:annotation>
                     <xs:documentation>

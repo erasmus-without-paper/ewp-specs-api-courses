@@ -84,11 +84,8 @@ There are a couple of consequences of this strategy:
  * LOSes MUST NOT change their type, ever. If, for some reason, HEI wants to
    change a type of the LOS entity, it MUST expose it under a different ID.
 
- * For safety, it is HIGHLY RECOMMENDED that all implementers use [surrogate
-   IDs](https://en.wikipedia.org/wiki/Surrogate_key) in their LOS ID suffixes.
-   Our recommendation is to use UUIDs, but other surrogate keys are also
-   acceptable. This recommendation is also true for all other IDs exposed via
-   EWP.
+ * LOS ID suffixes MUST consist of surrogate keys, as explained [here]
+   [ids-intro].
 
 
 Request method
@@ -230,3 +227,4 @@ Data model entities involved in the response
 [institutions-api]: https://github.com/erasmus-without-paper/ewp-specs-api-institutions
 [replication-api]: https://github.com/erasmus-without-paper/ewp-specs-api-course-replication
 [emrex]: http://emrex.eu/
+[ids-intro]: https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
