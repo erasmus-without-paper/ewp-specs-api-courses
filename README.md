@@ -70,8 +70,8 @@ various computer systems:
    primary key.
 
 In EWP, we have considered many ways of dealing with this issue, and eventually
-we have [decided]
-(https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9) to
+we have
+[decided](https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9) to
 adopt the somewhat "mixed" strategy - we use a single set of IDs for all LOS
 types, but **the type of each LOS MUST be included in its ID, in a clearly
 specified way** (see XSD for details). Same is true for `loi_id` values (which
@@ -84,8 +84,8 @@ There are a couple of consequences of this strategy:
  * LOSes MUST NOT change their type, ever. If, for some reason, HEI wants to
    change a type of the LOS entity, it MUST expose it under a different ID.
 
- * LOS ID suffixes MUST consist of surrogate keys, as explained [here]
-   [ids-intro].
+ * LOS ID suffixes MUST consist of surrogate keys, as explained
+   [here][ids-intro].
 
 
 Request method
@@ -122,9 +122,9 @@ This parameter is *repeatable*, so the request MAY contain multiple occurrences
 of it. The server is REQUIRED to process all of them.
 
 Server implementers provide their own chosen values of `<max-los-ids>` and
-`<max-los-codes>` via their manifest entry (see [manifest-entry.xsd]
-(manifest-entry.xsd)). Clients SHOULD parse these values (or assume they're
-equal to `1`).
+`<max-los-codes>` via their manifest entry (see
+[manifest-entry.xsd](manifest-entry.xsd)). Clients SHOULD parse these values
+(or assume they're equal to `1`).
 
 
 ### `lois_before` (optional)
@@ -206,8 +206,9 @@ Handling of invalid parameters
 Response
 --------
 
-Servers MUST respond with a valid XML document described by the [response.xsd]
-(response.xsd) schema. See the schema annotations for further information.
+Servers MUST respond with a valid XML document described by the
+[response.xsd](response.xsd) schema. See the schema annotations for further
+information.
 
 
 Data model entities involved in the response
