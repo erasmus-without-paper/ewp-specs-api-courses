@@ -5,6 +5,15 @@ This document describes all the changes made to the *Courses API* document,
 starting from its first beta draft version.
 
 
+0.5.1
+-----
+
+* Fixed annotations. The `<languageOfInstruction>` element is of `xs:language`
+  type, so it's not "ISO 639-1 code" (as it has been mentioned in the
+  annotations), but rather "BCP 47 code". (This is different, because BCP 47
+  codes may contain various subtags.)
+
+
 0.5.0
 -----
 
