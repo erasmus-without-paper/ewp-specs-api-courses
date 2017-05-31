@@ -221,11 +221,16 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="url" type="ewp:HTTP" minOccurs="0" maxOccurs="1">
+                            <xs:element name="url" type="ewp:HTTPWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The URL of the entity's web page (with the description of the course or
                                         degree programme).
+
+                                        If given, the xml:lang attribute SHOULD represent the language of this page.
+                                        Multiple URLs can be provided (with different xml:lang values). It is also
+                                        perfectly okay to provide a single URL which dynamically detects the viewer's
+                                        language preferences (in this case, no xml:lang attribute should be given).
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
