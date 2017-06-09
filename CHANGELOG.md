@@ -5,6 +5,20 @@ This document describes all the changes made to the *Courses API* document,
 starting from its first beta draft version.
 
 
+0.6.0
+-----
+
+* Changed XML namespaces (as part of
+  [this issue](https://github.com/erasmus-without-paper/ewp-specs-api-iias/issues/22)).
+  Since this version, Courses API is in the `stable-v1` XML namespace.
+
+  This does not means that Courses API is stable. It can still change in
+  backward-incompatible ways, until version `1.0.0` is released.
+
+* The `url` is not `maxOccurs="unbounded"`, and it may have an `xml:lang`
+  attribute. See [here](https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/13).
+
+
 0.5.1
 -----
 
