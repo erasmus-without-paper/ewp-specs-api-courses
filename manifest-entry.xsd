@@ -9,15 +9,17 @@
     targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-courses/blob/stable-v1/manifest-entry.xsd"
     xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/blob/stable-v1/manifest-entry.xsd"
 >
+    <!-- WRTODO: Once released, fix all schemaLocations pointing to its master branch. -->
+
     <xs:import
         schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
         namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     />
 
     <xs:import
-        schemaLocation="response.xsd"
+        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-courses/master/response.xsd"
         namespace="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
-    /> <!-- WRTODO: make it absolute -->
+    />
 
     <xs:annotation>
         <xs:documentation>
