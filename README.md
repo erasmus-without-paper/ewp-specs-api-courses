@@ -48,8 +48,8 @@ instances.
    specific time, it has its students, etc.
 
 This API allows to access both - LOSes and LOIs - but all LOIs are accessible
-via LOS parents. If a LOS doesn't has a LOI child, then it means that this LOS
-has not been conducted in the searched timespan.
+via LOS parents. If a LOS doesn't have a LOI child, then it means that this LOS
+has not been conducted in the searched time span.
 
 
 <a name='unique-identifiers'></a>
