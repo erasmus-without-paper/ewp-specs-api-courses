@@ -172,14 +172,11 @@ example, in your manifest entry's `<admin-notes>` element). This might help
 future API designers to propose more comprehensive APIs.
 
 
-Permissions
------------
+Security
+--------
 
- * All requests from the EWP Network MUST be allowed to access this API.
-
- * Additionally, implementers MAY allow this API to be accessed by
-   **anonymous** external clients too (without the need of using any client
-   certificate).
+This version of this API uses [standard EWP Authentication and Security,
+Version 1][sec-v1].
 
 
 Handling of invalid parameters
@@ -229,3 +226,4 @@ Data model entities involved in the response
 [replication-api]: https://github.com/erasmus-without-paper/ewp-specs-api-course-replication
 [emrex]: http://emrex.eu/
 [ids-intro]: https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
+[sec-v1]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v1
