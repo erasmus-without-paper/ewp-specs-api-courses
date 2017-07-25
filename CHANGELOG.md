@@ -5,6 +5,19 @@ This document describes all the changes made to the *Courses API* document,
 starting from its first beta draft version.
 
 
+0.6.1
+-----
+
+* Make `los-code`s explicitly recommended.
+* Fix some misspellings.
+* Fix schemaLocations.
+* Explicitly declare that this version still requires the use of
+  [Version 1](https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v1)
+  of the *Authentication and Security* document. You can find more information
+  on the planned process of updating security requirements
+  [here](https://github.com/erasmus-without-paper/ewp-specs-sec-intro/issues/1).
+
+
 0.6.0
 -----
 
