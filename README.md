@@ -176,7 +176,15 @@ Security
 --------
 
 This version of this API uses [standard EWP Authentication and Security,
-Version 1][sec-v1].
+Version 2][sec-v2]. Server implementers choose which security methods they
+support by declaring them in their manifest's API-entry.
+
+This API provides data which is also usually accessible to the anonymous public
+by other channels. It is RECOMMENDED for server implementers to not be overly
+strict on security methods they require (i.e. it is RECOMMENDED to *not*
+require extra layers of encryption in requests and responses - TLS seems more
+than enough). Server implementers MAY also consider allowing this API to be
+accessed by anonymous clients.
 
 
 Handling of invalid parameters
@@ -226,4 +234,4 @@ Data model entities involved in the response
 [replication-api]: https://github.com/erasmus-without-paper/ewp-specs-api-course-replication
 [emrex]: http://emrex.eu/
 [ids-intro]: https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
-[sec-v1]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v1
+[sec-v2]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v2
