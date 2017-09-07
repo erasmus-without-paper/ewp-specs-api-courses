@@ -95,7 +95,7 @@ Major changes in the format of LOS and LOI IDs:
   separate surrogate and natural/business keys for all LOSes.
 
 For discussion and reasoning, see
-[this thread](https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9).
+[this thread](https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/9).
 
 
 0.2.1

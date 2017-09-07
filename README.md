@@ -71,7 +71,7 @@ various computer systems:
 
 In EWP, we have considered many ways of dealing with this issue, and eventually
 we have
-[decided](https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9) to
+[decided](https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/9) to
 adopt the somewhat "mixed" strategy - we use a single set of IDs for all LOS
 types, but **the type of each LOS MUST be included in its ID, in a clearly
 specified way** (see XSD for details). Same is true for `loi_id` values (which
